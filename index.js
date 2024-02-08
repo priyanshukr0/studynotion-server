@@ -22,10 +22,10 @@ database.connect();
 
 app.use(express.json());
 app.use(cookieParser());
-
+const corsOriginUrl = process.env.CORS_ORIGIN; 
 app.use(
   cors({
-    origin: JSON.parse(process.env.CORS_ORIGIN),
+    origin: corsOriginUrl ,
     credentials: true,
     maxAge: 14400,
   })
